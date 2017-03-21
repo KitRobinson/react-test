@@ -1,3 +1,23 @@
 <%# index.html.erb %>
 
 <%= react_component 'Records', { data: @records } %>
+
+
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+<h4>
+    First Textarea
+  </h4>
+  <textarea id="texty" name="area1" cols="40">
+</textarea><br />
+
+<script> 
+	new nicEditor({
+		fullPanel : true, 
+		onSave : function(content, id, instance) {
+			alert('save button clicked for element '+id+' = '+content);
+			}
+		}).panelInstance('texty');
+
+</script>
